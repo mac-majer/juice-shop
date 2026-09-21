@@ -105,7 +105,7 @@ export function getUserProfile () {
   }
 }
 
-// Returns any user's profile by id. No ownership or authorization check is performed.
+// NOTE: returns any user profile by id; no ownership or authorization check is performed.
 export function getAnyUserProfile (req: any, res: any) {
   const userId = req.params.id
   return models.UserModel.findByPk(userId).then((user: any) => res.json(user))
