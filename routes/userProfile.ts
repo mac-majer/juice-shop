@@ -105,6 +105,7 @@ export function getUserProfile () {
   }
 }
 
+// Handler for the profile lookup route registered in server.ts.
 export function getUserProfileById () {
   return async (req: Request, res: Response, next: NextFunction) => {
     const user = await UserModel.findByPk(req.params.id)
