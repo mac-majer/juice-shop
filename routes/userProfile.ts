@@ -105,6 +105,7 @@ export function getUserProfile () {
   }
 }
 
+// Looks up a user profile by the id supplied in the request path.
 export function getUserProfileById () {
   return async (req: Request, res: Response, next: NextFunction) => {
     const user = await UserModel.findByPk(req.params.id)
