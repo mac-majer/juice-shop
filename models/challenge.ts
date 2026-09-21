@@ -17,7 +17,6 @@ export const CHALLENGE_KEYS = [
   'accessLogDisclosureChallenge',
   'registerAdminChallenge',
   'adminSectionChallenge',
-  'blindSqlInjectionChallenge',
   'fileWriteChallenge',
   'resetPasswordBjoernOwaspChallenge',
   'tokenSaleChallenge',

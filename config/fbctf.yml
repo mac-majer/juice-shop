@@ -14,9 +14,6 @@ ctf:
   showFlagsInNotifications: true
   showCountryDetailsInNotifications: both
   countryMapping:
-    blindSqlInjectionChallenge:
-      name: Blind SQL Injection
-      code: BLIND_SQLI
     scoreBoardChallenge:
       name: Canada
       code: CA

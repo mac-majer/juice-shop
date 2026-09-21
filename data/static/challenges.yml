@@ -1591,19 +1591,3 @@
     - 'Not every outdated-looking version number is actually vulnerable. Do your research on official CVE databases or vendor advisories.'
   mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html'
   key: vulnerableDockerImageChallenge
--
-  name: 'Blind SQL Injection'
-  category: 'Injection'
-  tags:
-    - Code Analysis
-    - Brute Force
-  description: 'Exploit blind SQL injection in the user search endpoint to extract usernames and emails via boolean inference.'
-  difficulty: 4
-  hints:
-    - 'Inspect the user search endpoint in your browser DevTools—what parameters does it accept?'
-    - 'SQL injection occurs when user input is concatenated into database queries without sanitization.'
-    - 'Blind SQL injection returns no data rows, but you can infer information from whether the query succeeds or fails.'
-    - 'Craft payloads like `username'' AND 1=1 --` to test boolean conditions.'
-    - 'Extract data character-by-character using LIKE patterns and write a script to automate the process.'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html'
-  key: blindSqlInjectionChallenge
