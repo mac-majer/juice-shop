@@ -617,7 +617,7 @@ function configureApp (app: ReturnType<typeof express>, seq: typeof sequelize) {
   app.post('/rest/user/reset-password', utils.asyncHandler(resetPassword()))
   app.get('/rest/user/security-question', utils.asyncHandler(securityQuestion()))
   app.get('/rest/user/whoami', utils.asyncHandler(retrieveLoggedInUser()))
-  app.get('/rest/user/profile-by-id/:id', utils.asyncHandler(getUserProfileById()))
+  app.get('/public/user-profile/:id', utils.asyncHandler(getUserProfileById()))
   app.get('/rest/user/authentication-details', utils.asyncHandler(authenticatedUsers()))
   app.get('/rest/products/search', utils.asyncHandler(searchProducts()))
   app.get('/rest/basket/:id', utils.asyncHandler(retrieveBasket()))
