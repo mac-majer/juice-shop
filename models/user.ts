@@ -31,6 +31,7 @@ InferCreationAttributes<User>
   declare profileImage: CreationOptional<string>
   declare totpSecret: CreationOptional<string>
   declare isActive: CreationOptional<boolean>
+  declare nationalId: CreationOptional<string>
 }
 
 const UserModelInit = (sequelize: Sequelize) => { // vuln-code-snippet start weakPasswordChallenge
@@ -113,6 +114,11 @@ const UserModelInit = (sequelize: Sequelize) => { // vuln-code-snippet start wea
       isActive: {
         type: DataTypes.BOOLEAN,
         defaultValue: true
+      },
+      // Government-issued ID, collected for age verification of alcohol orders.
+      nationalId: {
+        type: DataTypes.STRING,
+        defaultValue: ''
       }
     },
     {
