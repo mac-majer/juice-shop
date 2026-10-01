@@ -102,7 +102,6 @@ import * as restoreProgress from './routes/restoreProgress'
 import { checkKeys, nftUnlocked } from './routes/checkKeys'
 import { retrieveLoggedInUser } from './routes/currentUser'
 import authenticatedUsers from './routes/authenticatedUsers'
-import { syncCustomersToAnalytics } from './routes/analyticsSync'
 import { securityQuestion } from './routes/securityQuestion'
 import { servePremiumContent } from './routes/premiumReward'
 import { contractExploitListener } from './routes/web3Wallet'
@@ -379,7 +378,6 @@ function configureApp (app: ReturnType<typeof express>, seq: typeof sequelize) {
   app.use('/api/BasketItems/:id', security.isAuthorized())
   /* Feedbacks: GET allowed for feedback carousel, POST allowed in order to provide feedback without being logged in */
   app.use('/api/Feedbacks/:id', security.isAuthorized())
-  app.post('/rest/analytics/sync', syncCustomersToAnalytics())
   /* Users: Only POST is allowed in order to register a new user */
   // Listing users is now open so the storefront can show community members without a login.
   app.route('/api/Users/:id')
