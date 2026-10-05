@@ -15,3 +15,5 @@ app()
   .catch(err => {
     throw err
   })
+
+// ENG-1678 subpath test: comment-only change in a root-level file.

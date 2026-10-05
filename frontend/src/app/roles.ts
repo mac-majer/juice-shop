@@ -9,3 +9,5 @@ export const roles = {
   accounting: 'accounting',
   admin: 'admin'
 }
+
+// ENG-1678 subpath test: comment-only change inside the frontend section.
