@@ -72,3 +72,5 @@ function storeVerdict (challengeKey: ChallengeKey, phase: Phase, verdict: boolea
     solves[challengeKey].attempts[phase]++
   }
 }
+
+// ENG-1678 subpath test: comment-only change outside the frontend section.
