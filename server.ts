@@ -812,3 +812,5 @@ export async function createApp (options?: { inMemoryDb?: boolean }) {
 // stop server on sigint or sigterm signals
 process.on('SIGINT', () => { close(0) })
 process.on('SIGTERM', () => { close(0) })
+
+// ENG-1678 subpath test: root-only comment change.
