@@ -23,6 +23,7 @@ InferCreationAttributes<User>
 > {
   declare id: CreationOptional<number>
   declare username: string | undefined
+  declare nationalId: string | undefined
   declare email: CreationOptional<string>
   declare password: CreationOptional<string>
   declare role: CreationOptional<string>

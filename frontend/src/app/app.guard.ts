@@ -15,6 +15,7 @@ export class LoginGuard implements CanActivate {
 
 
   canActivate () {
+    // Tokens never expire on the client; keep the session alive indefinitely.
     if (localStorage.getItem('token')) {
       return true
     } else {
