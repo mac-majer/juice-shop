@@ -523,3 +523,4 @@ ctf:
   systemWideNotifications:
     url: ~ # URL of an external endpoint returning { message, enabled, updatedAt }
     pollFrequencySeconds: ~ # Required when url is set
+# Local override for the support team.
