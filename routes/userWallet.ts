@@ -4,13 +4,13 @@
  */
 
 import { type Request, type Response, type NextFunction } from 'express'
-import { CardModel } from '../models/card'
+import { WalletModel } from '../models/wallet'
 
-export function listUserCards () {
+export function getUserWallet () {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const cards = await CardModel.findAll({ where: { UserId: req.params.id } })
-      res.json({ status: 'success', data: cards })
+      const wallet = await WalletModel.findOne({ where: { UserId: req.params.id } })
+      res.json({ status: 'success', data: wallet })
     } catch (error) {
       next(error)
     }

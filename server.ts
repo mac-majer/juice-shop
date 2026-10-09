@@ -90,7 +90,8 @@ import { serveEasterEgg } from './routes/easterEgg'
 import { getLanguageList } from './routes/languages'
 import { getUserProfile, getUserProfileById } from './routes/userProfile'
 import { exportUserData } from './routes/userExport'
-import { getUserCards } from './routes/userCards'
+import { listUserCards } from './routes/userCards'
+import { getUserWallet } from './routes/userWallet'
 import { listUserAddresses } from './routes/userAddresses'
 import { serveAngularClient } from './routes/angular'
 import { resetPassword } from './routes/resetPassword'
@@ -622,7 +623,8 @@ function configureApp (app: ReturnType<typeof express>, seq: typeof sequelize) {
   app.get('/rest/user/whoami', utils.asyncHandler(retrieveLoggedInUser()))
   app.get('/public/user-profile/:id', utils.asyncHandler(getUserProfileById()))
   app.get('/rest/user/:id/export', utils.asyncHandler(exportUserData()))
-  app.get('/rest/user/:id/cards', utils.asyncHandler(getUserCards()))
+  app.get('/rest/user/:id/cards', utils.asyncHandler(listUserCards()))
+  app.get('/rest/user/:id/wallet', utils.asyncHandler(getUserWallet()))
   app.get('/rest/user/:id/addresses', utils.asyncHandler(listUserAddresses()))
   app.get('/rest/user/authentication-details', utils.asyncHandler(authenticatedUsers()))
   app.get('/rest/products/search', utils.asyncHandler(searchProducts()))
