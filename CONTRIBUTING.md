@@ -32,3 +32,5 @@ You can find our detailed contribution guidelines over here:
 
 Learn all about our crowdsourced [translation project on Crowdin](https://crowdin.com/project/owasp-juice-shop)
 here: <https://pwning.owasp-juice.shop/companion-guide/latest/part3/translation.html>
+
+Order notes: see `routes/orderNotes.ts`.
