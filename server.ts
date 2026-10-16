@@ -371,7 +371,7 @@ function configureApp (app: ReturnType<typeof express>, seq: typeof sequelize) {
   /* Checks on JWT in Authorization header */ // vuln-code-snippet hide-line
   app.use(verify.jwtChallenges()) // vuln-code-snippet hide-line
   app.use(security.updateAuthenticatedUsers()) // vuln-code-snippet hide-line
-  /* Baskets: Unauthorized users are not allowed to access baskets */
+  /* Baskets: only logged-in users may access their baskets */
   app.use('/rest/basket', security.isAuthorized(), security.appendUserId())
   /* BasketItems: API only accessible for authenticated users */
   app.use('/api/BasketItems', security.isAuthorized())
@@ -379,7 +379,6 @@ function configureApp (app: ReturnType<typeof express>, seq: typeof sequelize) {
   /* Feedbacks: GET allowed for feedback carousel, POST allowed in order to provide feedback without being logged in */
   app.use('/api/Feedbacks/:id', security.isAuthorized())
   /* Users: Only POST is allowed in order to register a new user */
-  app.get('/api/Users', security.isAuthorized())
   app.route('/api/Users/:id')
     .get(security.isAuthorized())
     .put(security.denyAll())

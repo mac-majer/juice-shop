@@ -13,6 +13,7 @@ import { UserModel } from '../models/user'
 import * as models from '../models/index'
 import { type User } from '../data/types'
 import * as utils from '../lib/utils'
+import { reportLogin } from '../lib/analytics'
 
 // vuln-code-snippet start loginAdminChallenge loginBenderChallenge loginJimChallenge
 export function login () {
@@ -23,6 +24,7 @@ export function login () {
         const authenticatedUser = { data: user, bid: basket.id } // keep track of original basket
         const token = security.authorize(authenticatedUser)
         security.authenticatedUsers.put(token, authenticatedUser)
+        void reportLogin(user, res.req.ip)
         res.json({ authentication: { token, bid: basket.id, umail: user.email } })
       }).catch((error: Error) => {
         next(error)
